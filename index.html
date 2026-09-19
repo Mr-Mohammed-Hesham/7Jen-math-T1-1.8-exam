@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 📝 غيّر عنوان الامتحان والوصف هنا -->
-    <title>رياضيات - تحليل الميل والرسوم البيانية (الصف السابع) | Mr. Mohammed Hesham</title>
-    <meta name="description" content="امتحان تفاعلي شامل - منصة مستر محمد هشام">
+    <title>امتحان الرياضيات - الصف السابع العام - الميل والتمثيل البياني</title>
+    <meta name="description" content="امتحان تفاعلي شامل عن الميل والتمثيل البياني - رياضيات الصف السابع العام">
     <meta name="author" content="Mr. Mohammed Hesham">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -48,7 +47,7 @@
         .math-display {
             display: inline-block; direction: ltr;
             font-family: 'Times New Roman', 'Cambria Math', serif;
-            font-size: 1.2em; font-style: italic;
+            font-size: 1.15em; font-style: italic;
             padding: 2px 8px; background: #f0fdfa;
             border-radius: 6px; margin: 2px;
             color: #0f766e; font-weight: 600; letter-spacing: 0.5px;
@@ -76,60 +75,60 @@
         <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">EN</button>
     </div>
 
-    <div id="saveIndicator" class="save-indicator"> <span data-ar="تم الحفظ" data-en="Saved">تم الحفظ</span></div>
+    <div id="saveIndicator" class="save-indicator">💾 <span data-ar="تم الحفظ" data-en="Saved">تم الحفظ</span></div>
 
     <div id="timer-container" class="max-w-4xl mx-auto mb-4 text-center no-print">
         <div class="bg-white p-4 rounded-2xl shadow-md inline-block border-2 border-teal-100">
             <span class="text-gray-600 ml-2" data-ar="الوقت المتبقي:" data-en="Time Remaining:">⏰ الوقت المتبقي:</span>
             <span id="timer" class="text-2xl font-bold text-teal-600 font-mono">45:00</span>
-            <span class="shuffle-badge" data-ar="🎲 أسئلة عشوائية" data-en="🎲 Random Questions">🎲 أسئلة عشوائية</span>
+            <span class="shuffle-badge" data-ar="🎲 أسئلة عشوائية" data-en=" Random Questions">🎲 أسئلة عشوائية</span>
         </div>
     </div>
 
     <div class="max-w-4xl mx-auto mb-6 flex flex-wrap gap-3 justify-center no-print">
         <button onclick="toggleAnswers()" class="bg-teal-600 hover:bg-teal-700 text-white px-5 py-2 rounded-xl font-medium transition shadow cursor-pointer" data-ar="👀 إظهار / إخفاء الإجابات" data-en="👀 Show / Hide Answers">👀 إظهار / إخفاء الإجابات</button>
-        <button onclick="window.print()" class="bg-gray-700 hover:bg-gray-900 text-white px-5 py-2 rounded-xl font-medium transition shadow cursor-pointer" data-ar="🖨️ طباعة" data-en="🖨️ Print">🖨️ طباعة</button>
-        <button onclick="reshuffleExam()" class="bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white px-5 py-2 rounded-xl font-medium transition shadow cursor-pointer" data-ar="🔄 أسئلة جديدة" data-en="🔄 New Questions">🔄 أسئلة جديدة</button>
-        <button onclick="clearProgress()" class="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-xl font-medium transition shadow cursor-pointer" data-ar="🗑️ مسح التقدم" data-en="🗑️ Clear Progress">🗑️ مسح التقدم</button>
+        <button onclick="window.print()" class="bg-gray-700 hover:bg-gray-900 text-white px-5 py-2 rounded-xl font-medium transition shadow cursor-pointer" data-ar="️ طباعة" data-en="🖨️ Print">🖨️ طباعة</button>
+        <button onclick="reshuffleExam()" class="bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white px-5 py-2 rounded-xl font-medium transition shadow cursor-pointer" data-ar="🔄 أسئلة جديدة" data-en="🔄 New Questions"> أسئلة جديدة</button>
+        <button onclick="clearProgress()" class="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-xl font-medium transition shadow cursor-pointer" data-ar="🗑️ مسح التقدم" data-en="🗑️ Clear Progress">️ مسح التقدم</button>
     </div>
 
-    <!-- 📝 غيّر عناوين الامتحان والوصف هنا -->
     <header class="max-w-4xl mx-auto bg-white p-6 rounded-2xl shadow-lg mb-8 border-4 border-teal-400">
         <div class="text-center">
-            <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2" data-ar="📐 رياضيات - تحليل الميل والرسوم البيانية (الصف السابع)" data-en="📐 Interactive Exam: -">📐 رياضيات - تحليل الميل والرسوم البيانية (الصف السابع)</h1>
-            <h2 class="text-lg text-teal-600 font-semibold" data-ar="Mathematics" data-en="STEM Curriculum &amp; Educational Science">Mathematics</h2>
-            <p class="text-sm text-gray-600 mt-2" data-ar="وصف مختصر لمحتوى الامتحان والمواضيع المغطاة" data-en="Brief description of exam content and covered topics">وصف مختصر لمحتوى الامتحان والمواضيع المغطاة</p>
-            <p class="text-xs text-green-600 mt-2 font-semibold" data-ar="💾 يتم حفظ تقدمك تلقائياً" data-en="💾 Your progress is saved automatically">💾 يتم حفظ تقدمك تلقائياً</p>
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2" data-ar=" الميل والتمثيل البياني" data-en="📐 Slope and Graphing">📐 الميل والتمثيل البياني</h1>
+            <h2 class="text-lg text-teal-600 font-semibold" data-ar="الصف السابع العام (رياضيات)" data-en="Grade 7 General (Mathematics)">الصف السابع العام (رياضيات)</h2>
+            <p class="text-sm text-gray-600 mt-2" data-ar="الجدول، التمثيل البياني، الميل، والنسبة" data-en="Tables, Graphs, Slope, and Ratios">الجدول، التمثيل البياني، الميل، والنسبة</p>
+            <p class="text-xs text-green-600 mt-2 font-semibold" data-ar="💾 يتم حفظ تقدمك تلقائياً - 20 سؤالاً في 5 أقسام" data-en="💾 Your progress is saved automatically - 20 questions in 5 sections">💾 يتم حفظ تقدمك تلقائياً - 20 سؤالاً في 5 أقسام</p>
         </div>
         <div class="mt-4 flex flex-wrap justify-center gap-4 text-sm text-gray-600">
             <span><span data-ar="📅 التاريخ:" data-en="📅 Date:">📅 التاريخ:</span> <input type="text" id="examDate" class="border-b-2 border-teal-300 bg-transparent w-28 text-center"></span>
             <span><span data-ar="😊 الاسم:" data-en="😊 Name:">😊 الاسم:</span> <input type="text" id="studentName" class="border-b-2 border-teal-300 bg-transparent w-32 text-center" placeholder="اكتب اسمك"></span>
             <span><span data-ar="🏫 الشعبة:" data-en="🏫 Class:">🏫 الشعبة:</span> <input type="text" id="studentClass" class="border-b-2 border-teal-300 bg-transparent w-28 text-center" placeholder="الشعبة"></span>
-            <span><span data-ar="⏰ المدة: 45 دقيقة" data-en="⏰ Duration: 45 min">⏰ المدة: 60 دقيقة</span></span>
+            <span><span data-ar="⏰ المدة: 45 دقيقة" data-en="⏰ Duration: 45 min">⏰ المدة: 45 دقيقة</span></span>
             <span><span data-ar="📊 المجموع: 100 درجة" data-en="📊 Total: 100 pts">📊 المجموع: 100 درجة</span></span>
         </div>
     </header>
 
-    <!-- 📝 يمكنك إضافة صيغ أو ملاحظات هامة هنا، أو حذف هذا القسم إذا لم يكن بحاجة إليه -->
-    <div class="max-w-4xl mx-auto mb-6 bg-white p-4 rounded-xl shadow-md border-2 border-teal-200 no-print" id="notes-formula-box">
-        <h3 class="font-bold text-lg mb-3 text-teal-700 text-center" data-ar="📐 ملاحظات أو صيغ هامة" data-en="📐 Important Notes or Formulae">📐 ملاحظات أو صيغ هامة</h3>
-        <div class="grid md:grid-cols-2 gap-3 text-sm" id="notes-content">
-            <div class="formula-box"><strong>ملاحظة 1:</strong> الميل هو معدل التغير، ويتم حسابه بقسمة عدد الصفحات على الزمن: 50 / 1 =</div>
-            <div class="formula-box"><strong>ملاحظة 2:</strong> الميل = 9 ÷ 3 = 3.</div>
+    <div class="max-w-4xl mx-auto mb-6 bg-white p-4 rounded-xl shadow-md border-2 border-teal-200 no-print">
+        <h3 class="font-bold text-lg mb-3 text-teal-700 text-center" data-ar="📐 الصيغ الأساسية" data-en="📐 Key Formulae">📐 الصيغ الأساسية</h3>
+        <div class="grid md:grid-cols-2 gap-3 text-sm">
+            <div class="formula-box"><strong>Slope (m):</strong> m = (y₂ - y₁)/(x₂ - x₁)</div>
+            <div class="formula-box"><strong>Rate:</strong> Rate = Change in y / Change in x</div>
+            <div class="formula-box"><strong>Direct Proportion:</strong> y = kx</div>
+            <div class="formula-box"><strong>Speed:</strong> Speed = Distance / Time</div>
         </div>
     </div>
 
     <main class="max-w-4xl mx-auto space-y-8" id="exam-content"></main>
 
     <div class="text-center no-print pb-8 mt-8">
-        <button onclick="gradeExam()" class="bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white text-lg px-10 py-4 rounded-2xl font-bold shadow-xl transition transform hover:scale-105 cursor-pointer" data-ar="🎯 صحح إجاباتي!" data-en="🎯 Grade My Answers!">🎯 صحح إجاباتي!</button>
+        <button onclick="gradeExam()" class="bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white text-lg px-10 py-4 rounded-2xl font-bold shadow-xl transition transform hover:scale-105 cursor-pointer" data-ar=" صحح إجاباتي!" data-en=" Grade My Answers!">🎯 صحح إجاباتي!</button>
     </div>
 
     <div id="results-panel" class="max-w-4xl mx-auto mt-8 bg-white p-8 rounded-2xl shadow-2xl border-4 border-teal-400 hidden no-print">
         <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center" data-ar="🏆 نتيجتك يا بطل! 🏆" data-en="🏆 Your Results, Champion! 🏆">🏆 نتيجتك يا بطل! 🏆</h2>
         <div class="grid md:grid-cols-3 gap-4 mb-6">
             <div class="bg-teal-50 p-4 rounded-xl text-center"><p data-ar="😊 الاسم" data-en="😊 Name">😊 الاسم</p><p id="res-name" class="font-bold text-xl text-teal-700">-</p></div>
-            <div class="bg-emerald-50 p-4 rounded-xl text-center"><p data-ar="📅 التاريخ" data-en="📅 Date">📅 التاريخ</p><p id="res-date" class="font-bold text-xl text-emerald-700">-</p></div>
+            <div class="bg-emerald-50 p-4 rounded-xl text-center"><p data-ar="📅 التاريخ" data-en=" Date">📅 التاريخ</p><p id="res-date" class="font-bold text-xl text-emerald-700">-</p></div>
             <div class="bg-teal-50 p-4 rounded-xl text-center"><p data-ar="🌟 المجموع" data-en="🌟 Score">🌟 المجموع</p><p id="res-total" class="font-bold text-3xl text-teal-600">0 / 100</p></div>
         </div>
         <div class="text-center mb-6">
@@ -138,7 +137,7 @@
             <p class="text-sm text-gray-500" data-ar="نسبة النجاح" data-en="Success Rate">نسبة النجاح</p>
         </div>
         <div class="bg-gray-50 p-6 rounded-xl mb-6">
-            <h3 class="font-bold text-lg mb-4 text-gray-800" data-ar="📊 أدائك في كل قسم:" data-en="📊 Your Performance:">📊 أدائك في كل قسم:</h3>
+            <h3 class="font-bold text-lg mb-4 text-gray-800" data-ar="📊 أدائك في كل قسم:" data-en="📊 Your Performance:"> أدائك في كل قسم:</h3>
             <div class="space-y-3" id="sections-performance"></div>
         </div>
         <div class="text-center mb-6">
@@ -146,31 +145,26 @@
             <p id="emailStatus" class="text-sm mt-2 text-center font-medium"></p>
         </div>
         <div class="flex gap-3 justify-center">
-            <button onclick="window.print()" class="bg-gray-700 text-white px-6 py-3 rounded-xl font-semibold" data-ar="🖨️ طباعة النتيجة" data-en="🖨️ Print Results">🖨️ طباعة النتيجة</button>
+            <button onclick="window.print()" class="bg-gray-700 text-white px-6 py-3 rounded-xl font-semibold" data-ar="🖨️ طباعة النتيجة" data-en="️ Print Results">🖨️ طباعة النتيجة</button>
         </div>
     </div>
 
     <footer class="max-w-4xl mx-auto mt-10 mb-8 text-center text-gray-500 text-sm no-print">
-        © <span data-ar="رياضيات - تحليل الميل والرسوم البيانية (الصف السابع)" data-en="Interactive Exam: -">رياضيات - تحليل الميل والرسوم البيانية (الصف السابع)</span> | Mr. Mohammed Hesham 📐
+        © <span data-ar="الميل والتمثيل البياني" data-en="Slope and Graphing">الميل والتمثيل البياني</span> | Mr. Mohammed Hesham 📐
     </footer>
 
 <script>
-// ==================== إعدادات EmailJS ====================
 const PUBLIC_KEY = "Rb3Lq8tXaFmc5YHUH";
 const SERVICE_ID = "service_w15m64i";
 const TEMPLATE_ID = "template_5b0u2tq";
 const TARGET_EMAIL = "mohammedhesham872@gmail.com";
 emailjs.init(PUBLIC_KEY);
 
-// ==================== 💾 نظام حفظ التقدم ====================
-// 📝 غيّر اسم المفتاح ليكون فريداً لكل امتحان جديد
-const STORAGE_KEY = 'hesham_exam_mu826ow4'; 
-
-// ⚠️ هام: يجب أن تتطابق هذه الأرقام مع عدد الأسئلة والأقسام التي تضعها في originalExamData بالأسفل
-const TOTAL_TIME = 2700; // الوقت بالثواني (3600 = 60 دقيقة)
-const TOTAL_QUESTIONS = 20; // العدد الكلي للأسئلة
-const TOTAL_SECTIONS = 5; // العدد الكلي للأقسام
-const QUESTIONS_PER_SECTION = 4; // عدد الأسئلة في كل قسم (لحساب الدرجات)
+const STORAGE_KEY = 'slope_graphing_grade7_exam_v1';
+const TOTAL_TIME = 2700;
+const TOTAL_QUESTIONS = 20;
+const TOTAL_SECTIONS = 5;
+const QUESTIONS_PER_SECTION = 4;
 
 let currentSeed = null;
 let answersVisible = false;
@@ -188,7 +182,6 @@ let rng = null;
 
 function showSaveIndicator() {
     const indicator = document.getElementById('saveIndicator');
-    if (!indicator) return;
     indicator.classList.add('show');
     if (saveIndicatorTimeout) clearTimeout(saveIndicatorTimeout);
     saveIndicatorTimeout = setTimeout(() => indicator.classList.remove('show'), 1500);
@@ -198,9 +191,9 @@ function saveState(showIndicator = true) {
     try {
         const state = {
             seed: currentSeed, lang: currentLang,
-            studentName: document.getElementById('studentName')?.value || '',
-            studentClass: document.getElementById('studentClass')?.value || '',
-            examDate: document.getElementById('examDate')?.value || '',
+            studentName: document.getElementById('studentName').value,
+            studentClass: document.getElementById('studentClass').value,
+            examDate: document.getElementById('examDate').value,
             answers: getSelectedAnswers(),
             timeRemaining: timeRemaining,
             answersVisible: answersVisible, savedAt: Date.now()
@@ -241,12 +234,9 @@ function clearProgress() {
 }
 
 function setupAnswerListeners() {
-    const content = document.getElementById('exam-content');
-    if (content) {
-        content.addEventListener('change', (e) => {
-            if (e.target.type === 'radio') saveState();
-        });
-    }
+    document.getElementById('exam-content').addEventListener('change', (e) => {
+        if (e.target.type === 'radio') saveState();
+    });
 }
 
 function setupInputListeners() {
@@ -259,643 +249,264 @@ function setupInputListeners() {
     });
 }
 
-// =====================================================================
-// 📝 منطقة تعديل الأسئلة: قم بتعديل هذا الجزء فقط لإضافة امتحانك الجديد
-// =====================================================================
 const originalExamData = {
-    "sections": [
+    sections: [
         {
-            "id": "sec1",
-            "title": {
-                "ar": "🔹 الجزء 1: المفاهيم والأساسيات",
-                "en": "🔹 Part 1: Core Concepts & Fundamentals"
-            },
-            "questions": [
+            id: 'sec1',
+            title: { ar: '🔹 الجزء 1: الجداول والتمثيل البياني', en: '🔹 Part 1: Tables and Graphs' },
+            questions: [
                 {
-                    "q": {
-                        "ar": "إذا كان الجدول يوضح أن ساعة واحدة تقابل 50 صفحة، فما هو الميل؟",
-                        "en": "If the table shows that 1 hour corresponds to 50 pages, what is the slope?"
-                    },
-                    "options": [
-                        {
-                            "ar": "50",
-                            "en": "50"
-                        },
-                        {
-                            "ar": "1",
-                            "en": "1"
-                        },
-                        {
-                            "ar": "100",
-                            "en": "100"
-                        },
-                        {
-                            "ar": "0.5",
-                            "en": "0.5"
-                        }
+                    q: { ar: 'إذا كان الجدول يظهر: الزمن (ساعة) = 1, 2, 3, 4 والمسافة (كم) = 50, 100, 150, 200. ما هو الميل؟', en: 'If the table shows: Time (hours) = 1, 2, 3, 4 and Distance (km) = 50, 100, 150, 200. What is the slope?' },
+                    options: [
+                        { ar: '<span class="math-display">50</span>', en: '<span class="math-display">50</span>' },
+                        { ar: '<span class="math-display">100</span>', en: '<span class="math-display">100</span>' },
+                        { ar: '<span class="math-display">25</span>', en: '<span class="math-display">25</span>' },
+                        { ar: '<span class="math-display">200</span>', en: '<span class="math-display">200</span>' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "الميل هو معدل التغير، ويتم حسابه بقسمة عدد الصفحات على الزمن: 50 / 1 = 50.",
-                        "en": "The slope is the rate of change, calculated by dividing the number of pages by time: 50 / 1 = 50."
-                    }
+                    correct: 0,
+                    answer: { ar: 'الميل = التغير في المسافة / التغير في الزمن = 50/1 = 50', en: 'Slope = change in distance / change in time = 50/1 = 50' }
                 },
                 {
-                    "q": {
-                        "ar": "ماذا يمثل الميل في سياق عدد الصفحات المقروءة مقابل الزمن؟",
-                        "en": "What does the slope represent in the context of pages read vs. time?"
-                    },
-                    "options": [
-                        {
-                            "ar": "إجمالي الصفحات",
-                            "en": "Total pages"
-                        },
-                        {
-                            "ar": "عدد الصفحات في الساعة الواحدة",
-                            "en": "Number of pages per hour"
-                        },
-                        {
-                            "ar": "الزمن الكلي",
-                            "en": "Total time"
-                        },
-                        {
-                            "ar": "الفرق بين الصفحات",
-                            "en": "Difference between pages"
-                        }
+                    q: { ar: 'إذا كانت النقطة (2, 120) على خط مستقيم، والنقطة (1.5, 90) أيضاً على نفس الخط، فما الميل؟', en: 'If point (2, 120) is on a line, and point (1.5, 90) is also on the same line, what is the slope?' },
+                    options: [
+                        { ar: '<span class="math-display">60</span>', en: '<span class="math-display">60</span>' },
+                        { ar: '<span class="math-display">120</span>', en: '<span class="math-display">120</span>' },
+                        { ar: '<span class="math-display">30</span>', en: '<span class="math-display">30</span>' },
+                        { ar: '<span class="math-display">90</span>', en: '<span class="math-display">90</span>' }
                     ],
-                    "correct": 1,
-                    "answer": {
-                        "ar": "الميل هنا يمثل معدل القراءة، وهو عدد الصفحات في كل ساعة.",
-                        "en": "The slope here represents the reading rate, which is the number of pages per hour."
-                    }
+                    correct: 0,
+                    answer: { ar: 'الميل = (120-90)/(2-1.5) = 30/0.5 = 60', en: 'Slope = (120-90)/(2-1.5) = 30/0.5 = 60' }
                 },
                 {
-                    "q": {
-                        "ar": "إذا كان لدينا 3 ياردات تقابل 9 أقدام، ما هو الميل؟",
-                        "en": "If we have 3 yards corresponding to 9 feet, what is the slope?"
-                    },
-                    "options": [
-                        {
-                            "ar": "2",
-                            "en": "2"
-                        },
-                        {
-                            "ar": "3",
-                            "en": "3"
-                        },
-                        {
-                            "ar": "6",
-                            "en": "6"
-                        },
-                        {
-                            "ar": "9",
-                            "en": "9"
-                        }
+                    q: { ar: 'في التمثيل البياني، إذا كان الميل = 45، فماذا يمثل؟', en: 'In a graph, if the slope = 45, what does it represent?' },
+                    options: [
+                        { ar: 'السرعة', en: 'Speed' },
+                        { ar: 'المسافة', en: 'Distance' },
+                        { ar: 'الزمن', en: 'Time' },
+                        { ar: 'التسارع', en: 'Acceleration' }
                     ],
-                    "correct": 1,
-                    "answer": {
-                        "ar": "الميل = 9 ÷ 3 = 3.",
-                        "en": "Slope = 9 ÷ 3 = 3."
-                    }
+                    correct: 0,
+                    answer: { ar: 'في تمثيل المسافة-الزمن، الميل يمثل السرعة', en: 'In a distance-time graph, slope represents speed' }
                 },
                 {
-                    "q": {
-                        "ar": "في العلاقة بين الياردات والأقدام، ماذا يعني الميل الذي قيمته 3؟",
-                        "en": "In the relationship between yards and feet, what does a slope of 3 mean?"
-                    },
-                    "options": [
-                        {
-                            "ar": "كل 3 ياردات تساوي قدماً واحدة",
-                            "en": "Every 3 yards equal 1 foot"
-                        },
-                        {
-                            "ar": "كل ياردة واحدة تساوي 3 أقدام",
-                            "en": "Every 1 yard equals 3 feet"
-                        },
-                        {
-                            "ar": "المساحة تساوي 3",
-                            "en": "Area equals 3"
-                        },
-                        {
-                            "ar": "الزمن يساوي 3",
-                            "en": "Time equals 3"
-                        }
+                    q: { ar: 'إذا كانت النسبة بين عدد الباردات وعدد الأقلام هي 1:3، وعدد الباردات = 3، فكم عدد الأقلام؟', en: 'If the ratio of erasers to pencils is 1:3, and number of erasers = 3, how many pencils?' },
+                    options: [
+                        { ar: '<span class="math-display">9</span>', en: '<span class="math-display">9</span>' },
+                        { ar: '<span class="math-display">6</span>', en: '<span class="math-display">6</span>' },
+                        { ar: '<span class="math-display">12</span>', en: '<span class="math-display">12</span>' },
+                        { ar: '<span class="math-display">3</span>', en: '<span class="math-display">3</span>' }
                     ],
-                    "correct": 1,
-                    "answer": {
-                        "ar": "كل ياردة واحدة تحتوي على 3 أقدام.",
-                        "en": "Every single yard contains 3 feet."
-                    }
+                    correct: 0,
+                    answer: { ar: 'إذا كانت النسبة 1:3 والباردات = 3، إذن الأقلام = 3 × 3 = 9', en: 'If ratio is 1:3 and erasers = 3, then pencils = 3 × 3 = 9' }
                 }
             ]
         },
         {
-            "id": "sec2",
-            "title": {
-                "ar": "🔹 الجزء 2: التطبيقات والمعادلات",
-                "en": "🔹 Part 2: Formulas & Applied Problems"
-            },
-            "questions": [
+            id: 'sec2',
+            title: { ar: '🔹 الجزء 2: حساب الميل', en: '🔹 Part 2: Calculating Slope' },
+            questions: [
                 {
-                    "q": {
-                        "ar": "عند تمثيل بيانات (1, 50) و (2, 100) بيانياً، أي مما يلي يصف شكل الخط الناتج؟",
-                        "en": "When graphing the data (1, 50) and (2, 100), which of the following describes the resulting line?"
-                    },
-                    "options": [
-                        {
-                            "ar": "خط منحني",
-                            "en": "Curved line"
-                        },
-                        {
-                            "ar": "خط مستقيم يمر بنقطة الأصل",
-                            "en": "Straight line through origin"
-                        },
-                        {
-                            "ar": "خط أفقي",
-                            "en": "Horizontal line"
-                        },
-                        {
-                            "ar": "خط عمودي",
-                            "en": "Vertical line"
-                        }
+                    q: { ar: 'احسب ميل الخط المستقيم الذي يمر بالنقطتين <span class="math-display">(0, 0)</span> و <span class="math-display">(3, 90)</span>', en: 'Calculate the slope of the line passing through <span class="math-display">(0, 0)</span> and <span class="math-display">(3, 90)</span>' },
+                    options: [
+                        { ar: '<span class="math-display">30</span>', en: '<span class="math-display">30</span>' },
+                        { ar: '<span class="math-display">90</span>', en: '<span class="math-display">90</span>' },
+                        { ar: '<span class="math-display">3</span>', en: '<span class="math-display">3</span>' },
+                        { ar: '<span class="math-display">270</span>', en: '<span class="math-display">270</span>' }
                     ],
-                    "correct": 1,
-                    "answer": {
-                        "ar": "العلاقة التي لها ميل ثابت تمثل خطاً مستقيماً يبدأ من نقطة الأصل.",
-                        "en": "A proportional relationship with a constant slope forms a straight line passing through the origin (0,0)."
-                    }
+                    correct: 0,
+                    answer: { ar: 'الميل = (90-0)/(3-0) = 90/3 = 30', en: 'Slope = (90-0)/(3-0) = 90/3 = 30' }
                 },
                 {
-                    "q": {
-                        "ar": "إذا كان الميل يساوي 40، ماذا يعني ذلك في مسألة قراءة الصفحات؟",
-                        "en": "If the slope is 40, what does that mean for the reading pages problem?"
-                    },
-                    "options": [
-                        {
-                            "ar": "قراءة 40 صفحة في الساعة",
-                            "en": "Reading 40 pages per hour"
-                        },
-                        {
-                            "ar": "قراءة ساعة واحدة كل 40 صفحة",
-                            "en": "Reading 1 hour every 40 pages"
-                        },
-                        {
-                            "ar": "إجمالي 40 صفحة",
-                            "en": "Total 40 pages"
-                        },
-                        {
-                            "ar": "لا شيء مما سبق",
-                            "en": "None of the above"
-                        }
+                    q: { ar: 'احسب ميل الخط المستقيم الذي يمر بالنقطتين <span class="math-display">(1.5, 67.5)</span> و <span class="math-display">(2, 90)</span>', en: 'Calculate the slope of the line passing through <span class="math-display">(1.5, 67.5)</span> and <span class="math-display">(2, 90)</span>' },
+                    options: [
+                        { ar: '<span class="math-display">45</span>', en: '<span class="math-display">45</span>' },
+                        { ar: '<span class="math-display">90</span>', en: '<span class="math-display">90</span>' },
+                        { ar: '<span class="math-display">22.5</span>', en: '<span class="math-display">22.5</span>' },
+                        { ar: '<span class="math-display">67.5</span>', en: '<span class="math-display">67.5</span>' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "الميل يمثل عدد الصفحات المنجزة في الساعة الواحدة.",
-                        "en": "The slope represents the number of pages completed per hour."
-                    }
+                    correct: 0,
+                    answer: { ar: 'الميل = (90-67.5)/(2-1.5) = 22.5/0.5 = 45', en: 'Slope = (90-67.5)/(2-1.5) = 22.5/0.5 = 45' }
                 },
                 {
-                    "q": {
-                        "ar": "لحساب الميل من الجدول، ما هي الصيغة الصحيحة؟",
-                        "en": "To calculate the slope from a table, what is the correct formula?"
-                    },
-                    "options": [
-                        {
-                            "ar": "x2 - x1 / y2 - y1",
-                            "en": "x2 - x1 / y2 - y1"
-                        },
-                        {
-                            "ar": "y2 - y1 / x2 - x1",
-                            "en": "y2 - y1 / x2 - x1"
-                        },
-                        {
-                            "ar": "x1 * y1",
-                            "en": "x1 * y1"
-                        },
-                        {
-                            "ar": "y / x",
-                            "en": "y / x"
-                        }
+                    q: { ar: 'إذا كان الميل سالباً، ماذا يعني ذلك؟', en: 'If the slope is negative, what does that mean?' },
+                    options: [
+                        { ar: 'الخط ينخفض من اليسار إلى اليمين', en: 'The line decreases from left to right' },
+                        { ar: 'الخط يرتفع من اليسار إلى اليمين', en: 'The line increases from left to right' },
+                        { ar: 'الخط أفقي', en: 'The line is horizontal' },
+                        { ar: 'الخط عمودي', en: 'The line is vertical' }
                     ],
-                    "correct": 1,
-                    "answer": {
-                        "ar": "الميل = التغير الرأسي / التغير الأفقي.",
-                        "en": "Slope = Vertical change / Horizontal change."
-                    }
+                    correct: 0,
+                    answer: { ar: 'الميل السالب يعني أن الخط ينخفض من اليسار إلى اليمين', en: 'Negative slope means the line decreases from left to right' }
                 },
                 {
-                    "q": {
-                        "ar": "إذا زاد الزمن بمقدار ساعة واحدة، وزاد عدد الصفحات بمقدار 50، فما هو الميل؟",
-                        "en": "If time increases by 1 hour and pages increase by 50, what is the slope?"
-                    },
-                    "options": [
-                        {
-                            "ar": "50",
-                            "en": "50"
-                        },
-                        {
-                            "ar": "25",
-                            "en": "25"
-                        },
-                        {
-                            "ar": "100",
-                            "en": "100"
-                        },
-                        {
-                            "ar": "5",
-                            "en": "5"
-                        }
+                    q: { ar: 'ما ميل الخط الأفقي؟', en: 'What is the slope of a horizontal line?' },
+                    options: [
+                        { ar: '<span class="math-display">0</span>', en: '<span class="math-display">0</span>' },
+                        { ar: '<span class="math-display">1</span>', en: '<span class="math-display">1</span>' },
+                        { ar: 'غير معرّف', en: 'Undefined' },
+                        { ar: '<span class="math-display">-1</span>', en: '<span class="math-display">-1</span>' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "الميل = 50 / 1 = 50.",
-                        "en": "Slope = 50 / 1 = 50."
-                    }
+                    correct: 0,
+                    answer: { ar: 'ميل الخط الأفقي = 0', en: 'Slope of horizontal line = 0' }
                 }
             ]
         },
         {
-            "id": "sec3",
-            "title": {
-                "ar": "🔹 الجزء 3: التحليل والاستنتاج",
-                "en": "🔹 Part 3: Analysis & Derivations"
-            },
-            "questions": [
+            id: 'sec3',
+            title: { ar: '🔹 الجزء 3: السرعة والمعدل', en: '🔹 Part 3: Speed and Rate' },
+            questions: [
                 {
-                    "q": {
-                        "ar": "في الجدول الخاص بالأقدام والياردات، ما قيمة y عندما تكون x=4؟",
-                        "en": "In the table for feet and yards, what is the value of y when x=4?"
-                    },
-                    "options": [
-                        {
-                            "ar": "3",
-                            "en": "3"
-                        },
-                        {
-                            "ar": "6",
-                            "en": "6"
-                        },
-                        {
-                            "ar": "9",
-                            "en": "9"
-                        },
-                        {
-                            "ar": "12",
-                            "en": "12"
-                        }
+                    q: { ar: 'سيارة تقطع 120 كم في ساعتين. ما سرعتها المتوسطة؟', en: 'A car travels 120 km in 2 hours. What is its average speed?' },
+                    options: [
+                        { ar: '<span class="math-display">60 km/h</span>', en: '<span class="math-display">60 km/h</span>' },
+                        { ar: '<span class="math-display">120 km/h</span>', en: '<span class="math-display">120 km/h</span>' },
+                        { ar: '<span class="math-display">240 km/h</span>', en: '<span class="math-display">240 km/h</span>' },
+                        { ar: '<span class="math-display">30 km/h</span>', en: '<span class="math-display">30 km/h</span>' }
                     ],
-                    "correct": 3,
-                    "answer": {
-                        "ar": "باستخدام الميل 3، نضرب 3 في 4 للحصول على 12.",
-                        "en": "Using the slope 3, we multiply 3 by 4 to get 12."
-                    }
+                    correct: 0,
+                    answer: { ar: 'السرعة = المسافة ÷ الزمن = 120 ÷ 2 = 60 كم/ساعة', en: 'Speed = distance ÷ time = 120 ÷ 2 = 60 km/h' }
                 },
                 {
-                    "q": {
-                        "ar": "أيهما يعبر عن معدل الوحدة؟",
-                        "en": "Which represents the unit rate?"
-                    },
-                    "options": [
-                        {
-                            "ar": "الميل",
-                            "en": "Slope"
-                        },
-                        {
-                            "ar": "المحور السيني",
-                            "en": "x-axis"
-                        },
-                        {
-                            "ar": "المحور الصادي",
-                            "en": "y-axis"
-                        },
-                        {
-                            "ar": "نقطة الأصل",
-                            "en": "Origin"
-                        }
+                    q: { ar: 'إذا كانت السرعة = 45 كم/ساعة، والزمن = 3 ساعات، فما المسافة؟', en: 'If speed = 45 km/h, and time = 3 hours, what is the distance?' },
+                    options: [
+                        { ar: '<span class="math-display">135 km</span>', en: '<span class="math-display">135 km</span>' },
+                        { ar: '<span class="math-display">45 km</span>', en: '<span class="math-display">45 km</span>' },
+                        { ar: '<span class="math-display">15 km</span>', en: '<span class="math-display">15 km</span>' },
+                        { ar: '<span class="math-display">90 km</span>', en: '<span class="math-display">90 km</span>' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "الميل هو تعبير عن معدل التغير لكل وحدة واحدة.",
-                        "en": "Slope expresses the rate of change per single unit."
-                    }
+                    correct: 0,
+                    answer: { ar: 'المسافة = السرعة × الزمن = 45 × 3 = 135 كم', en: 'Distance = speed × time = 45 × 3 = 135 km' }
                 },
                 {
-                    "q": {
-                        "ar": "إذا كانت النقطتان (1, 3) و (2, 6) تقعان على خط، فما الميل؟",
-                        "en": "If points (1, 3) and (2, 6) are on a line, what is the slope?"
-                    },
-                    "options": [
-                        {
-                            "ar": "1",
-                            "en": "1"
-                        },
-                        {
-                            "ar": "2",
-                            "en": "2"
-                        },
-                        {
-                            "ar": "3",
-                            "en": "3"
-                        },
-                        {
-                            "ar": "6",
-                            "en": "6"
-                        }
+                    q: { ar: 'أي السيارتين تسير بسرعة أكبر: السيارة A بميل 60، أم السيارة B بميل 45؟', en: 'Which car has greater speed: Car A with slope 60, or Car B with slope 45?' },
+                    options: [
+                        { ar: 'السيارة A', en: 'Car A' },
+                        { ar: 'السيارة B', en: 'Car B' },
+                        { ar: 'نفس السرعة', en: 'Same speed' },
+                        { ar: 'لا يمكن التحديد', en: 'Cannot determine' }
                     ],
-                    "correct": 2,
-                    "answer": {
-                        "ar": "التغير في y هو 3 والتغير في x هو 1، لذا الميل = 3.",
-                        "en": "Change in y is 3, change in x is 1, so slope = 3."
-                    }
+                    correct: 0,
+                    answer: { ar: 'السيارة A لأن ميلها أكبر (60 > 45)', en: 'Car A because its slope is greater (60 > 45)' }
                 },
                 {
-                    "q": {
-                        "ar": "المحور الأفقي x في الجدول الأول يمثل؟",
-                        "en": "The horizontal x-axis in the first table represents?"
-                    },
-                    "options": [
-                        {
-                            "ar": "عدد الصفحات",
-                            "en": "Number of pages"
-                        },
-                        {
-                            "ar": "الزمن بالساحات",
-                            "en": "Time in hours"
-                        },
-                        {
-                            "ar": "الياردات",
-                            "en": "Yards"
-                        },
-                        {
-                            "ar": "الأقدام",
-                            "en": "Feet"
-                        }
+                    q: { ar: 'إذا قطع شخص 288 متراً في 4 ثوانٍ، فما سرعته؟', en: 'If a person covers 288 meters in 4 seconds, what is their speed?' },
+                    options: [
+                        { ar: '<span class="math-display">72 m/s</span>', en: '<span class="math-display">72 m/s</span>' },
+                        { ar: '<span class="math-display">144 m/s</span>', en: '<span class="math-display">144 m/s</span>' },
+                        { ar: '<span class="math-display">36 m/s</span>', en: '<span class="math-display">36 m/s</span>' },
+                        { ar: '<span class="math-display">288 m/s</span>', en: '<span class="math-display">288 m/s</span>' }
                     ],
-                    "correct": 1,
-                    "answer": {
-                        "ar": "المحور x يمثل الزمن بالساعات.",
-                        "en": "The x-axis represents time in hours."
-                    }
+                    correct: 0,
+                    answer: { ar: 'السرعة = 288 ÷ 4 = 72 م/ث', en: 'Speed = 288 ÷ 4 = 72 m/s' }
                 }
             ]
         },
         {
-            "id": "sec4",
-            "title": {
-                "ar": "🔹 الجزء 4: المسائل المتقدمة",
-                "en": "🔹 Part 4: Advanced Problem Solving"
-            },
-            "questions": [
+            id: 'sec4',
+            title: { ar: '🔹 الجزء 4: التناسب والنسبة', en: '🔹 Part 4: Proportion and Ratio' },
+            questions: [
                 {
-                    "q": {
-                        "ar": "ما هو الميل بين (3, 150) و (4, 200)؟",
-                        "en": "What is the slope between (3, 150) and (4, 200)?"
-                    },
-                    "options": [
-                        {
-                            "ar": "50",
-                            "en": "50"
-                        },
-                        {
-                            "ar": "150",
-                            "en": "150"
-                        },
-                        {
-                            "ar": "200",
-                            "en": "200"
-                        },
-                        {
-                            "ar": "75",
-                            "en": "75"
-                        }
+                    q: { ar: 'إذا كانت y تتناسب طردياً مع x، و y = 50 عندما x = 1، فما قيمة y عندما x = 4؟', en: 'If y is directly proportional to x, and y = 50 when x = 1, what is y when x = 4?' },
+                    options: [
+                        { ar: '<span class="math-display">200</span>', en: '<span class="math-display">200</span>' },
+                        { ar: '<span class="math-display">100</span>', en: '<span class="math-display">100</span>' },
+                        { ar: '<span class="math-display">150</span>', en: '<span class="math-display">150</span>' },
+                        { ar: '<span class="math-display">50</span>', en: '<span class="math-display">50</span>' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "فرق الصادات 50 وفرق السينات 1، الميل = 50.",
-                        "en": "Difference in y is 50, difference in x is 1, slope = 50."
-                    }
+                    correct: 0,
+                    answer: { ar: 'y = kx، k = 50/1 = 50. إذن y = 50 × 4 = 200', en: 'y = kx, k = 50/1 = 50. So y = 50 × 4 = 200' }
                 },
                 {
-                    "q": {
-                        "ar": "الرسم البياني للميل الثابت يكون دائماً؟",
-                        "en": "The graph of a constant slope is always?"
-                    },
-                    "options": [
-                        {
-                            "ar": "متعرجاً",
-                            "en": "Wavy"
-                        },
-                        {
-                            "ar": "خطاً مستقيماً",
-                            "en": "Straight line"
-                        },
-                        {
-                            "ar": "دائرة",
-                            "en": "Circle"
-                        },
-                        {
-                            "ar": "متقطعاً",
-                            "en": "Dashed"
-                        }
+                    q: { ar: 'إذا كانت النسبة بين عددين هي 2:5، والعدد الأصغر = 10، فما العدد الأكبر؟', en: 'If the ratio of two numbers is 2:5, and the smaller number = 10, what is the larger number?' },
+                    options: [
+                        { ar: '<span class="math-display">25</span>', en: '<span class="math-display">25</span>' },
+                        { ar: '<span class="math-display">20</span>', en: '<span class="math-display">20</span>' },
+                        { ar: '<span class="math-display">15</span>', en: '<span class="math-display">15</span>' },
+                        { ar: '<span class="math-display">50</span>', en: '<span class="math-display">50</span>' }
                     ],
-                    "correct": 1,
-                    "answer": {
-                        "ar": "ميل ثابت يعني وجود خط مستقيم.",
-                        "en": "Constant slope means a linear relationship."
-                    }
+                    correct: 0,
+                    answer: { ar: '2:5 = 10:x → x = (5×10)/2 = 25', en: '2:5 = 10:x → x = (5×10)/2 = 25' }
                 },
                 {
-                    "q": {
-                        "ar": "إذا كان الميل 10، فما قيمة y عندما x=2؟",
-                        "en": "If the slope is 10, what is the value of y when x=2?"
-                    },
-                    "options": [
-                        {
-                            "ar": "10",
-                            "en": "10"
-                        },
-                        {
-                            "ar": "20",
-                            "en": "20"
-                        },
-                        {
-                            "ar": "5",
-                            "en": "5"
-                        },
-                        {
-                            "ar": "2",
-                            "en": "2"
-                        }
+                    q: { ar: 'إذا كان 3 عمال يبنون جداراً في 6 أيام، فكم يوماً يحتاج 6 عمال؟', en: 'If 3 workers build a wall in 6 days, how many days do 6 workers need?' },
+                    options: [
+                        { ar: '<span class="math-display">3 أيام</span>', en: '<span class="math-display">3 days</span>' },
+                        { ar: '<span class="math-display">12 يوماً</span>', en: '<span class="math-display">12 days</span>' },
+                        { ar: '<span class="math-display">9 أيام</span>', en: '<span class="math-display">9 days</span>' },
+                        { ar: '<span class="math-display">2 يوم</span>', en: '<span class="math-display">2 days</span>' }
                     ],
-                    "correct": 1,
-                    "answer": {
-                        "ar": "نضرب الميل في القيمة x للحصول على y.",
-                        "en": "We multiply slope by value x to get y."
-                    }
+                    correct: 0,
+                    answer: { ar: 'تناسب عكسي: 3×6 = 6×x → x = 3 أيام', en: 'Inverse proportion: 3×6 = 6×x → x = 3 days' }
                 },
                 {
-                    "q": {
-                        "ar": "ماذا يعني الميل في الرسم البياني؟",
-                        "en": "What does the slope mean in the graph?"
-                    },
-                    "options": [
-                        {
-                            "ar": "انحدار الخط",
-                            "en": "Steepness of the line"
-                        },
-                        {
-                            "ar": "طول الخط",
-                            "en": "Length of the line"
-                        },
-                        {
-                            "ar": "لون الخط",
-                            "en": "Color of the line"
-                        },
-                        {
-                            "ar": "سماكة الخط",
-                            "en": "Thickness of the line"
-                        }
+                    q: { ar: 'بسط النسبة <span class="math-display">150:200</span>', en: 'Simplify the ratio <span class="math-display">150:200</span>' },
+                    options: [
+                        { ar: '<span class="math-display">3:4</span>', en: '<span class="math-display">3:4</span>' },
+                        { ar: '<span class="math-display">15:20</span>', en: '<span class="math-display">15:20</span>' },
+                        { ar: '<span class="math-display">5:6</span>', en: '<span class="math-display">5:6</span>' },
+                        { ar: '<span class="math-display">1:2</span>', en: '<span class="math-display">1:2</span>' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "الميل هو انحدار الخط.",
-                        "en": "The slope is the steepness of the line."
-                    }
+                    correct: 0,
+                    answer: { ar: '150:200 = 15:20 = 3:4', en: '150:200 = 15:20 = 3:4' }
                 }
             ]
         },
         {
-            "id": "sec5",
-            "title": {
-                "ar": "🔹 الجزء 5: التقييم الشامل",
-                "en": "🔹 Part 5: Comprehensive Evaluation"
-            },
-            "questions": [
+            id: 'sec5',
+            title: { ar: ' الجزء 5: تطبيقات وتمارين', en: '🔹 Part 5: Applications & Exercises' },
+            questions: [
                 {
-                    "q": {
-                        "ar": "إذا كان الميل 5، هل الخط يرتفع للأعلى أم ينخفض؟",
-                        "en": "If the slope is 5, does the line rise or fall?"
-                    },
-                    "options": [
-                        {
-                            "ar": "يرتفع",
-                            "en": "Rises"
-                        },
-                        {
-                            "ar": "ينخفض",
-                            "en": "Falls"
-                        },
-                        {
-                            "ar": "أفقي",
-                            "en": "Horizontal"
-                        },
-                        {
-                            "ar": "لا يتحرك",
-                            "en": "Doesn't move"
-                        }
+                    q: { ar: 'نقطة على خط مستقيم ميله 50. إذا كانت الإحداثي x = 2، فما الإحداثي y؟ (الخط يمر بنقطة الأصل)', en: 'A point on a line with slope 50. If x-coordinate = 2, what is the y-coordinate? (Line passes through origin)' },
+                    options: [
+                        { ar: '<span class="math-display">100</span>', en: '<span class="math-display">100</span>' },
+                        { ar: '<span class="math-display">50</span>', en: '<span class="math-display">50</span>' },
+                        { ar: '<span class="math-display">25</span>', en: '<span class="math-display">25</span>' },
+                        { ar: '<span class="math-display">200</span>', en: '<span class="math-display">200</span>' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "الميل الموجب يعني ارتفاع الرسم البياني.",
-                        "en": "Positive slope means the graph rises."
-                    }
+                    correct: 0,
+                    answer: { ar: 'y = mx = 50 × 2 = 100', en: 'y = mx = 50 × 2 = 100' }
                 },
                 {
-                    "q": {
-                        "ar": "ما هي قيمة y عند نقطة الأصل (0,0)؟",
-                        "en": "What is the value of y at the origin (0,0)?"
-                    },
-                    "options": [
-                        {
-                            "ar": "1",
-                            "en": "1"
-                        },
-                        {
-                            "ar": "0",
-                            "en": "0"
-                        },
-                        {
-                            "ar": "50",
-                            "en": "50"
-                        },
-                        {
-                            "ar": "غير معرفة",
-                            "en": "Undefined"
-                        }
+                    q: { ar: 'إذا كانت معادلة الخط المستقيم y = 3x، فما الميل؟', en: 'If the equation of a line is y = 3x, what is the slope?' },
+                    options: [
+                        { ar: '<span class="math-display">3</span>', en: '<span class="math-display">3</span>' },
+                        { ar: '<span class="math-display">0</span>', en: '<span class="math-display">0</span>' },
+                        { ar: '<span class="math-display">1</span>', en: '<span class="math-display">1</span>' },
+                        { ar: '<span class="math-display">x</span>', en: '<span class="math-display">x</span>' }
                     ],
-                    "correct": 1,
-                    "answer": {
-                        "ar": "نقطة الأصل دائماً هي (0,0).",
-                        "en": "The origin is always (0,0)."
-                    }
+                    correct: 0,
+                    answer: { ar: 'في y = mx، الميل = m = 3', en: 'In y = mx, slope = m = 3' }
                 },
                 {
-                    "q": {
-                        "ar": "لتمثيل بيانات الجدول بيانياً، نضع القيم في المحاور؟",
-                        "en": "To graph the table data, how do we place values on the axes?"
-                    },
-                    "options": [
-                        {
-                            "ar": "x للزمن و y للصفحات",
-                            "en": "x for time and y for pages"
-                        },
-                        {
-                            "ar": "y للزمن و x للصفحات",
-                            "en": "y for time and x for pages"
-                        },
-                        {
-                            "ar": "كلاهما للصفحات",
-                            "en": "Both for pages"
-                        },
-                        {
-                            "ar": "كلاهما للزمن",
-                            "en": "Both for time"
-                        }
+                    q: { ar: 'أي النقاط التالية تقع على الخط y = 2x؟', en: 'Which of the following points lies on the line y = 2x?' },
+                    options: [
+                        { ar: '<span class="math-display">(3, 6)</span>', en: '<span class="math-display">(3, 6)</span>' },
+                        { ar: '<span class="math-display">(2, 3)</span>', en: '<span class="math-display">(2, 3)</span>' },
+                        { ar: '<span class="math-display">(6, 3)</span>', en: '<span class="math-display">(6, 3)</span>' },
+                        { ar: '<span class="math-display">(1, 3)</span>', en: '<span class="math-display">(1, 3)</span>' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "المتغير المستقل x يمثل الزمن، والتابع y يمثل الصفحات.",
-                        "en": "Independent variable x represents time, dependent y represents pages."
-                    }
+                    correct: 0,
+                    answer: { ar: 'عند x = 3، y = 2(3) = 6. إذن (3, 6) تقع على الخط', en: 'When x = 3, y = 2(3) = 6. So (3, 6) is on the line' }
                 },
                 {
-                    "q": {
-                        "ar": "إذا كان الميل 2، فما مقدار التغير في y عند تغير x بمقدار 5؟",
-                        "en": "If the slope is 2, what is the change in y when x changes by 5?"
-                    },
-                    "options": [
-                        {
-                            "ar": "2",
-                            "en": "2"
-                        },
-                        {
-                            "ar": "5",
-                            "en": "5"
-                        },
-                        {
-                            "ar": "7",
-                            "en": "7"
-                        },
-                        {
-                            "ar": "10",
-                            "en": "10"
-                        }
+                    q: { ar: 'إذا زاد الزمن من ساعتين إلى 4 ساعات، وزادت المسافة من 100 كم إلى 200 كم، فما الميل؟', en: 'If time increases from 2 hours to 4 hours, and distance increases from 100 km to 200 km, what is the slope?' },
+                    options: [
+                        { ar: '<span class="math-display">50</span>', en: '<span class="math-display">50</span>' },
+                        { ar: '<span class="math-display">100</span>', en: '<span class="math-display">100</span>' },
+                        { ar: '<span class="math-display">25</span>', en: '<span class="math-display">25</span>' },
+                        { ar: '<span class="math-display">200</span>', en: '<span class="math-display">200</span>' }
                     ],
-                    "correct": 3,
-                    "answer": {
-                        "ar": "بضرب الميل في التغير في x، نحصل على 10.",
-                        "en": "Multiplying slope by change in x, we get 10."
-                    }
+                    correct: 0,
+                    answer: { ar: 'الميل = (200-100)/(4-2) = 100/2 = 50', en: 'Slope = (200-100)/(4-2) = 100/2 = 50' }
                 }
             ]
         }
     ]
 };
-// =====================================================================
 
 function shuffleArray(array) {
     const arr = [...array];
-    for (let i = array.length - 1; i > 0; i--) {
+    for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(rng() * (i + 1));
         [arr[i], arr[j]] = [arr[j], arr[i]];
     }
@@ -931,7 +542,7 @@ function reshuffleExam() {
     if (confirm(msg)) {
         currentSeed = Date.now(); timeRemaining = TOTAL_TIME; answersVisible = false;
         prepareShuffledExam(); renderExam(); saveState();
-        alert(currentLang === 'ar' ? '🎲 تم تغيير الأسئلة! حظاً موفقاً! 🍀' : '🎲 Questions changed! Good luck! 🍀');
+        alert(currentLang === 'ar' ? ' تم تغيير الأسئلة! حظاً موفقاً! ' : '🎲 Questions changed! Good luck! 🍀');
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 }
@@ -940,10 +551,8 @@ function setLanguage(lang) {
     currentLang = lang;
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    const btnAr = document.getElementById('btn-ar');
-    const btnEn = document.getElementById('btn-en');
-    if (btnAr) btnAr.classList.toggle('active', lang === 'ar');
-    if (btnEn) btnEn.classList.toggle('active', lang === 'en');
+    document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     document.body.classList.toggle('en-mode', lang === 'en');
     document.querySelectorAll('[data-ar][data-en]').forEach(el => {
         el.innerHTML = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
@@ -953,7 +562,6 @@ function setLanguage(lang) {
 
 function renderExam() {
     const container = document.getElementById('exam-content');
-    if (!container) return;
     const labels = { ar: { option: ['أ', 'ب', 'ج', 'د'], answer: '✅ الإجابة:' }, en: { option: ['A', 'B', 'C', 'D'], answer: '✅ Answer:' } };
     const lbl = labels[currentLang]; const isRTL = currentLang === 'ar';
     let html = ''; let globalIdx = 0;
@@ -982,12 +590,10 @@ function renderExam() {
 
 function startTimer() {
     updateTimerDisplay();
-    if (timerInterval) clearInterval(timerInterval);
     timerInterval = setInterval(() => {
         timeRemaining--; updateTimerDisplay();
         if (timeRemaining % 60 === 0) saveState(false);
-        const timerEl = document.getElementById('timer');
-        if (timerEl && timeRemaining <= 600) timerEl.classList.add('timer-warning');
+        if (timeRemaining <= 300) document.getElementById('timer').classList.add('timer-warning');
         if (timeRemaining <= 0) {
             clearInterval(timerInterval);
             alert(currentLang === 'ar' ? "⏰ انتهى الوقت!" : "⏰ Time's up!");
@@ -998,8 +604,7 @@ function startTimer() {
 
 function updateTimerDisplay() {
     const m = Math.floor(timeRemaining / 60); const s = timeRemaining % 60;
-    const timerEl = document.getElementById('timer');
-    if (timerEl) timerEl.textContent = `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
+    document.getElementById('timer').textContent = `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
 }
 
 function toggleAnswers() {
@@ -1016,67 +621,47 @@ function gradeExam() {
         const li = document.getElementById(`q-${i}`);
         if (li) {
             const isCorrect = sel && sel.value === correctAnswersMap[i];
-            if (isCorrect) { 
-                correctCount++; 
-                li.classList.add('correct'); 
-                li.classList.remove('incorrect'); 
-                const secIdx = Math.min(TOTAL_SECTIONS - 1, Math.floor(i / Math.max(1, QUESTIONS_PER_SECTION)));
-                if (sectionScores[secIdx] !== undefined) sectionScores[secIdx]++; 
-            }
+            if (isCorrect) { correctCount++; li.classList.add('correct'); li.classList.remove('incorrect'); sectionScores[Math.floor(i / QUESTIONS_PER_SECTION)]++; }
             else { li.classList.add('incorrect'); li.classList.remove('correct'); }
         }
     }
-    const score = TOTAL_QUESTIONS > 0 ? Math.round((correctCount / TOTAL_QUESTIONS) * 100) : 0;
-    const resTotal = document.getElementById('res-total');
-    if (resTotal) resTotal.textContent = `${score} / 100`;
-    const resName = document.getElementById('res-name');
-    if (resName) resName.textContent = document.getElementById('studentName')?.value || (currentLang === 'ar' ? 'بطل' : 'Champion');
-    const resDate = document.getElementById('res-date');
-    if (resDate) resDate.textContent = new Date().toLocaleDateString(currentLang === 'ar' ? 'ar-AE' : 'en-US');
-    const pc = document.getElementById('sections-performance');
-    if (pc) {
-        pc.innerHTML = '';
-        examData.sections.forEach((s, idx) => {
-            const secQCount = originalExamData.sections[idx]?.questions.length || QUESTIONS_PER_SECTION;
-            pc.innerHTML += `<div class="flex justify-between items-center"><span class="text-gray-700">${s.title[currentLang]}</span><span class="font-bold text-teal-700">${sectionScores[idx] || 0}/${secQCount}</span></div>`;
-        });
-    }
+    const score = Math.round((correctCount / TOTAL_QUESTIONS) * 100);
+    document.getElementById('res-total').textContent = `${score} / 100`;
+    document.getElementById('res-name').textContent = document.getElementById('studentName').value || (currentLang === 'ar' ? 'بطل' : 'Champion');
+    document.getElementById('res-date').textContent = new Date().toLocaleDateString(currentLang === 'ar' ? 'ar-AE' : 'en-US');
+    const pc = document.getElementById('sections-performance'); pc.innerHTML = '';
+    examData.sections.forEach((s, idx) => {
+        pc.innerHTML += `<div class="flex justify-between items-center"><span class="text-gray-700">${s.title[currentLang]}</span><span class="font-bold text-teal-700">${sectionScores[idx]}/${QUESTIONS_PER_SECTION}</span></div>`;
+    });
     const badge = document.getElementById('success-badge');
-    const successPercent = document.getElementById('success-percent');
-    if (successPercent) successPercent.textContent = `${score}%`;
-    if (badge) {
-        if (currentLang === 'ar') {
-            if (score >= 90) { badge.textContent = '🌟 ممتاز جداً!'; badge.className = 'success-badge grade-excellent'; }
-            else if (score >= 75) { badge.textContent = '👏 ممتاز!'; badge.className = 'success-badge grade-good'; }
-            else if (score >= 50) { badge.textContent = '👍 جيد'; badge.className = 'success-badge grade-pass'; }
-            else { badge.textContent = '💪 حاول مرة أخرى'; badge.className = 'success-badge grade-fail'; }
-        } else {
-            if (score >= 90) { badge.textContent = '🌟 Outstanding!'; badge.className = 'success-badge grade-excellent'; }
-            else if (score >= 75) { badge.textContent = '👏 Excellent!'; badge.className = 'success-badge grade-good'; }
-            else if (score >= 50) { badge.textContent = '👍 Good'; badge.className = 'success-badge grade-pass'; }
-            else { badge.textContent = '💪 Try Again'; badge.className = 'success-badge grade-fail'; }
-        }
+    document.getElementById('success-percent').textContent = `${score}%`;
+    if (currentLang === 'ar') {
+        if (score >= 90) { badge.textContent = '🌟 ممتاز جداً!'; badge.className = 'success-badge grade-excellent'; }
+        else if (score >= 75) { badge.textContent = '👏 ممتاز!'; badge.className = 'success-badge grade-good'; }
+        else if (score >= 50) { badge.textContent = '👍 جيد'; badge.className = 'success-badge grade-pass'; }
+        else { badge.textContent = '💪 حاول مرة أخرى'; badge.className = 'success-badge grade-fail'; }
+    } else {
+        if (score >= 90) { badge.textContent = '🌟 Outstanding!'; badge.className = 'success-badge grade-excellent'; }
+        else if (score >= 75) { badge.textContent = '👏 Excellent!'; badge.className = 'success-badge grade-good'; }
+        else if (score >= 50) { badge.textContent = '👍 Good'; badge.className = 'success-badge grade-pass'; }
+        else { badge.textContent = ' Try Again'; badge.className = 'success-badge grade-fail'; }
     }
-    const resultsPanel = document.getElementById('results-panel');
-    if (resultsPanel) {
-        resultsPanel.classList.remove('hidden');
-        resultsPanel.scrollIntoView({ behavior: 'smooth' });
-    }
+    document.getElementById('results-panel').classList.remove('hidden');
+    document.getElementById('results-panel').scrollIntoView({ behavior: 'smooth' });
     if (timerInterval) clearInterval(timerInterval);
 }
 
 function sendResultsToEmail() {
     const btn = document.getElementById('sendEmailBtn');
     const status = document.getElementById('emailStatus');
-    if (!btn || !status) return;
     btn.disabled = true;
     btn.textContent = currentLang === 'ar' ? '⏳ جاري الإرسال...' : '⏳ Sending...';
-    const name = document.getElementById('studentName')?.value || 'N/A';
-    const studentClass = document.getElementById('studentClass')?.value || 'N/A';
-    const date = document.getElementById('examDate')?.value || new Date().toLocaleDateString();
-    const score = document.getElementById('res-total')?.textContent || '0 / 100';
-    const successRate = document.getElementById('success-percent')?.textContent || '0%';
-    const badge = document.getElementById('success-badge')?.textContent || '-';
+    const name = document.getElementById('studentName').value || 'N/A';
+    const studentClass = document.getElementById('studentClass').value || 'N/A';
+    const date = document.getElementById('examDate').value || new Date().toLocaleDateString();
+    const score = document.getElementById('res-total').textContent;
+    const successRate = document.getElementById('success-percent').textContent;
+    const badge = document.getElementById('success-badge').textContent;
     let questionsHTML = ''; let globalIdx = 0;
     examData.sections.forEach((section, sectionIdx) => {
         questionsHTML += `<tr style="background:linear-gradient(135deg,#0d9488,#0f766e);color:white;"><td colspan="5" style="padding:12px;font-weight:bold;">📌 ${currentLang==='ar'?'القسم':'Section'} ${sectionIdx+1}: ${section.title[currentLang]}</td></tr>`;
@@ -1084,18 +669,18 @@ function sendResultsToEmail() {
             const sel = document.querySelector(`input[name="q${globalIdx}"]:checked`);
             const sv = sel ? sel.value : null; const cv = correctAnswersMap[globalIdx]; const ic = sv === cv;
             let sat = currentLang==='ar'?'❌ لم يجب':'❌ No answer'; let sac = '#dc2626';
-            if (sv) { const si = sv.charCodeAt(0)-97; sat = q.options[si] ? q.options[si][currentLang] : 'N/A'; sac = ic?'#059669':'#dc2626'; }
-            const cat = q.options[q.correct] ? q.options[q.correct][currentLang] : 'N/A';
+            if (sv) { const si = sv.charCodeAt(0)-97; sat = q.options[si][currentLang]; sac = ic?'#059669':'#dc2626'; }
+            const cat = q.options[q.correct][currentLang];
             const rb = ic?'#f0fdf4':'#fef2f2'; const bl = ic?'4px solid #10b981':'4px solid #ef4444';
             questionsHTML += `<tr style="background:${rb};border-right:${bl};"><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;font-weight:bold;">${globalIdx+1}</td><td style="padding:10px;border:1px solid #e5e7eb;"><strong style="color:#0f766e;">${currentLang==='ar'?'❓ السؤال:':'❓ Question:'}</strong><br><span style="font-size:13px;">${q.q[currentLang]}</span></td><td style="padding:10px;border:1px solid #e5e7eb;"><strong style="color:${sac};">${currentLang==='ar'?'✍️ إجابة الطالب:':'✍️ Student:'}</strong><br><span style="color:${sac};font-size:13px;">${sat}</span></td><td style="padding:10px;border:1px solid #e5e7eb;"><strong style="color:#059669;">${currentLang==='ar'?'✅ الصحيحة:':'✅ Correct:'}</strong><br><span style="color:#059669;font-size:13px;">${cat}</span></td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">${ic?'<span style="font-size:24px;">✅</span>':'<span style="font-size:24px;">❌</span>'}</td></tr>`;
             globalIdx++;
         });
     });
-    const answersHTML = `<div style="font-family:'Segoe UI',Tahoma,Arial;direction:${currentLang==='ar'?'rtl':'ltr'};"><div style="background:linear-gradient(135deg,#0d9488,#0f766e);color:white;padding:20px;border-radius:10px 10px 0 0;text-align:center;"><h2 style="margin:0;">${currentLang==='ar'?'نتيجة الامتحان':'Exam Result'}</h2><p style="margin:5px 0 0;opacity:0.9;">${currentLang==='ar'?'تقرير تفصيلي':'Detailed Report'}</p></div><div style="background:#f0fdfa;padding:15px;"><table style="width:100%;border-collapse:collapse;"><tr><td style="padding:8px;font-weight:bold;color:#0f766e;">${currentLang==='ar'?'😊 الاسم:':'😊 Name:'}</td><td style="padding:8px;">${name}</td><td style="padding:8px;font-weight:bold;color:#0f766e;">${currentLang==='ar'?'🏫 الشعبة:':'🏫 Class:'}</td><td style="padding:8px;">${studentClass}</td></tr><tr><td style="padding:8px;font-weight:bold;color:#0f766e;">${currentLang==='ar'?'📅 التاريخ:':'📅 Date:'}</td><td style="padding:8px;">${date}</td><td style="padding:8px;font-weight:bold;color:#0f766e;">${currentLang==='ar'?'🏆 التقدير:':'🏆 Grade:'}</td><td style="padding:8px;">${badge}</td></tr></table></div><div style="background:white;padding:20px;text-align:center;"><div style="display:inline-block;margin:0 15px;"><div style="font-size:32px;font-weight:bold;color:#0d9488;">${score}</div><div style="color:#6b7280;font-size:13px;">${currentLang==='ar'?'الدرجة':'Score'}</div></div><div style="display:inline-block;margin:0 15px;"><div style="font-size:32px;font-weight:bold;color:#059669;">${successRate}%</div><div style="color:#6b7280;font-size:13px;">${currentLang==='ar'?'النسبة':'Rate'}</div></div></div><table style="width:100%;border-collapse:collapse;font-size:13px;"><thead><tr style="background:#0d9488;color:white;"><th style="padding:10px;border:1px solid #0f766e;">#</th><th style="padding:10px;border:1px solid #0f766e;">${currentLang==='ar'?'السؤال':'Question'}</th><th style="padding:10px;border:1px solid #0f766e;">${currentLang==='ar'?'إجابة الطالب':'Student'}</th><th style="padding:10px;border:1px solid #0f766e;">${currentLang==='ar'?'الصحيحة':'Correct'}</th><th style="padding:10px;border:1px solid #0f766e;">${currentLang==='ar'?'النتيجة':'Result'}</th></tr></thead><tbody>${questionsHTML}</tbody></table><div style="background:linear-gradient(135deg,#f0fdfa,#ccfbf1);padding:15px;border-radius:0 0 10px 10px;"><p style="margin:0;color:#0f766e;text-align:center;">📐 <strong>${currentLang==='ar'?'أحسنت يا بطل!':'Great job!'}</strong> 📐</p><p style="margin:5px 0 0;color:#0f766e;text-align:center;font-size:12px;">${currentLang==='ar'?'تم الإرسال تلقائياً | Mr. Mohammed Hesham':'Auto-sent | Mr. Mohammed Hesham'}</p></div></div>`;
+    const answersHTML = `<div style="font-family:'Segoe UI',Tahoma,Arial;direction:${currentLang==='ar'?'rtl':'ltr'};"><div style="background:linear-gradient(135deg,#0d9488,#0f766e);color:white;padding:20px;border-radius:10px 10px 0 0;text-align:center;"><h2 style="margin:0;">${currentLang==='ar'?'نتيجة امتحان الميل والتمثيل البياني':'Slope and Graphing Exam Result'}</h2><p style="margin:5px 0 0;opacity:0.9;">Grade 7 General - Mathematics</p></div><div style="background:#f0fdfa;padding:15px;"><table style="width:100%;border-collapse:collapse;"><tr><td style="padding:8px;font-weight:bold;color:#0f766e;">${currentLang==='ar'?'😊 الاسم:':'😊 Name:'}</td><td style="padding:8px;">${name}</td><td style="padding:8px;font-weight:bold;color:#0f766e;">${currentLang==='ar'?'🏫 الشعبة:':' Class:'}</td><td style="padding:8px;">${studentClass}</td></tr><tr><td style="padding:8px;font-weight:bold;color:#0f766e;">${currentLang==='ar'?'📅 التاريخ:':'📅 Date:'}</td><td style="padding:8px;">${date}</td><td style="padding:8px;font-weight:bold;color:#0f766e;">${currentLang==='ar'?'🏆 التقدير:':' Grade:'}</td><td style="padding:8px;">${badge}</td></tr></table></div><div style="background:white;padding:20px;text-align:center;"><div style="display:inline-block;margin:0 15px;"><div style="font-size:32px;font-weight:bold;color:#0d9488;">${score}</div><div style="color:#6b7280;font-size:13px;">${currentLang==='ar'?'الدرجة':'Score'}</div></div><div style="display:inline-block;margin:0 15px;"><div style="font-size:32px;font-weight:bold;color:#059669;">${successRate}%</div><div style="color:#6b7280;font-size:13px;">${currentLang==='ar'?'النسبة':'Rate'}</div></div></div><table style="width:100%;border-collapse:collapse;font-size:13px;"><thead><tr style="background:#0d9488;color:white;"><th style="padding:10px;border:1px solid #0f766e;">#</th><th style="padding:10px;border:1px solid #0f766e;">${currentLang==='ar'?'السؤال':'Question'}</th><th style="padding:10px;border:1px solid #0f766e;">${currentLang==='ar'?'إجابة الطالب':'Student'}</th><th style="padding:10px;border:1px solid #0f766e;">${currentLang==='ar'?'الصحيحة':'Correct'}</th><th style="padding:10px;border:1px solid #0f766e;">${currentLang==='ar'?'النتيجة':'Result'}</th></tr></thead><tbody>${questionsHTML}</tbody></table><div style="background:linear-gradient(135deg,#f0fdfa,#ccfbf1);padding:15px;border-radius:0 0 10px 10px;"><p style="margin:0;color:#0f766e;text-align:center;">📐 <strong>${currentLang==='ar'?'أحسنت يا بطل! استمر في إتقان الرياضيات!':'Great job! Keep mastering Mathematics!'}</strong> </p><p style="margin:5px 0 0;color:#0f766e;text-align:center;font-size:12px;">${currentLang==='ar'?'تم الإرسال تلقائياً | Mr. Mohammed Hesham':'Auto-sent | Mr. Mohammed Hesham'}</p></div></div>`;
     emailjs.send(SERVICE_ID, TEMPLATE_ID, { to_email: TARGET_EMAIL, student_name: name, student_class: studentClass, exam_date: date, total_score: score, success_rate: successRate, grade: badge, answers_table: answersHTML }).then(() => {
         status.textContent = currentLang==='ar'?'✅ تم الإرسال بنجاح!':'✅ Sent successfully!'; status.style.color = '#059669'; btn.textContent = currentLang==='ar'?'✓ تم':'✓ Sent';
     }).catch(err => {
-        status.textContent = currentLang==='ar'?'❌ حدث خطأ':'❌ Error'; status.style.color = '#dc2626'; btn.disabled = false; btn.textContent = currentLang==='ar'?'📧 حاول مرة أخرى':'📧 Try Again'; console.error(err);
+        status.textContent = currentLang==='ar'?'❌ حدث خطأ':'❌ Error'; status.style.color = '#dc2626'; btn.disabled = false; btn.textContent = currentLang==='ar'?' حاول مرة أخرى':'📧 Try Again'; console.error(err);
     });
 }
 
@@ -1107,18 +692,16 @@ window.addEventListener('DOMContentLoaded', () => {
         answersVisible = saved.answersVisible || false;
         document.documentElement.lang = currentLang;
         document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-        const btnAr = document.getElementById('btn-ar');
-        const btnEn = document.getElementById('btn-en');
-        if (btnAr) btnAr.classList.toggle('active', currentLang === 'ar');
-        if (btnEn) btnEn.classList.toggle('active', currentLang === 'en');
+        document.getElementById('btn-ar').classList.toggle('active', currentLang === 'ar');
+        document.getElementById('btn-en').classList.toggle('active', currentLang === 'en');
         document.body.classList.toggle('en-mode', currentLang === 'en');
         document.querySelectorAll('[data-ar][data-en]').forEach(el => { el.innerHTML = currentLang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en'); });
     } else { currentSeed = Date.now(); }
     prepareShuffledExam(); renderExam();
     if (saved) {
-        if (saved.studentName) { const el = document.getElementById('studentName'); if (el) el.value = saved.studentName; }
-        if (saved.studentClass) { const el = document.getElementById('studentClass'); if (el) el.value = saved.studentClass; }
-        if (saved.examDate) { const el = document.getElementById('examDate'); if (el) el.value = saved.examDate; }
+        if (saved.studentName) document.getElementById('studentName').value = saved.studentName;
+        if (saved.studentClass) document.getElementById('studentClass').value = saved.studentClass;
+        if (saved.examDate) document.getElementById('examDate').value = saved.examDate;
         if (saved.answers) restoreAnswers(saved.answers);
     }
     setupAnswerListeners(); setupInputListeners(); startTimer();
